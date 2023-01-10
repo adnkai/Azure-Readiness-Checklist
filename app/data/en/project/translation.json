@@ -1,7 +1,7 @@
 {
   "SITE_NAME": "The Azure Readiness Checklist",
   "INDEX_TITLE": "✨ Your Best Azure Readiness Tool ✨",
-  "URL_WEBSITE": "https://azurechecklist.com/",
+  "URL_WEBSITE": "https://azurereadyness.azurewebsites.net/",
   "SITE_TAGLINE": "🗂 Are you ready to go to prod on Azure? Use this checklist to find out!",
   "SITE_DESCRIPTION": "🗂 Are you ready to go to prod on Azure? Use this checklist to find out! Follow the rules and deliver the best of your work in a generated report!",
   "SITE_LANGUAGE": "en",
