@@ -1,8 +1,6 @@
 name: Azure Readiness Checklist Build & Release
 
 on:
-  workflow_dispatch:
-    branches: [master]
   push:
     branches: [ master ]
   pull_request:
@@ -10,7 +8,7 @@ on:
 
 jobs:
   build:
-
+    environment: azureReadiness
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -35,6 +33,11 @@ jobs:
     
     - name: Copy files to dist folder
       run: cp widgets.js dist/widgets.js && cp buttons.js dist/buttons.js
-    
-    - name: Output Directory
-      run: cd dist && ls
+  
+    - name: 'Deploy to Azure WebApp'
+      id: deploy-to-webapp 
+      uses: azure/webapps-deploy@0b651ed7546ecfc75024011f76944cb9b381ef1e
+      with:
+        app-name: "azurereadyness"
+        publish-profile: ${{ secrets.PUBLISH_PROFILE }}
+        package: "."
