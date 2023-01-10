@@ -35,7 +35,7 @@ jobs:
       run: cp widgets.js dist/widgets.js && cp buttons.js dist/buttons.js
 
     - name: move
-      run: mv ./app .
+      run: mv . ../
       
 
     - name: 'Deploy to Azure WebApp'
