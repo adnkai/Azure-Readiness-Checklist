@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: Checkout Repo 
       uses: actions/checkout@v2
-      
+
     - name: Install Dependencies
       uses: actions/setup-node@v1
       with:
@@ -33,11 +33,15 @@ jobs:
     
     - name: Copy files to dist folder
       run: cp widgets.js dist/widgets.js && cp buttons.js dist/buttons.js
-  
+
+    - name: move
+      run: mv ./app .
+      
+
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp 
       uses: azure/webapps-deploy@v2
       with:
         app-name: "azurereadyness"
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: ./app
+        package: .
